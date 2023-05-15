@@ -25,9 +25,9 @@ jobs:
         with:
           github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           script: |
-            const owner = ${{ github.event.inputs.owner }};
-            const repo = ${{ github.event.inputs.repo }};
-            const org = ${{ github.event.inputs.fork-org }};
+            const owner = '${{ github.event.inputs.owner }}';
+            const repo = '${{ github.event.inputs.repo }}';
+            const org = '${{ github.event.inputs.fork-org }}';
             const name = `${owner}-${repo}`;
 
             async function forkRepo() {
