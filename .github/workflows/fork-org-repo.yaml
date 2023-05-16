@@ -12,11 +12,17 @@ on:
       fork-org:
         description: 'Fork organization'     
         required: true
+      run-id:
+        description: 'run identifier'
+        required: true
 jobs:
   fork:
     runs-on: ubuntu-latest
 
     steps:
+      - name: ${{ github.event.inputs.run-id }}
+        run: echo run identifier ${{ github.event.inputs.run-id }}
+
       - name: Checkout code
         uses: actions/checkout@v2
 
